@@ -1,2 +1,31 @@
-<h1>Users#new</h1>
-<p>Find me in app/views/users/new.html.erb</p>
+<section class="page">
+  <div class="centered-box">
+    <h1 class='header'>New User</h1>
+    <%= render 'shared/errors' %>
+
+    <form action="<%= users_url %>" method="post">
+      <input
+        type="hidden"
+        name="authenticity_token"
+        value="<%= form_authenticity_token %>">
+
+      <p>
+        <label>Email
+          <input type="text" name="users[email]">
+        </label>
+      </p>
+
+      <p>
+        <label>Password
+          <input type="text" name="users[password]">
+        </label>
+      </p>
+
+      <button type="submit" name="submit">submit</button>
+    </form>
+  </div>
+
+  <% content_for :footer do %>
+    Create an account and start jammin'.
+  <% end %>
+</section>
