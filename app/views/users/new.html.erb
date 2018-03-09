@@ -1,6 +1,7 @@
 <section class="page">
   <div class="centered-box">
     <h1 class='header'>New User</h1>
+
     <%= render 'shared/errors' %>
 
     <form action="<%= users_url %>" method="post">
@@ -17,7 +18,7 @@
 
       <p>
         <label>Password
-          <input type="text" name="users[password]">
+          <input type="password" name="users[password]">
         </label>
       </p>
 

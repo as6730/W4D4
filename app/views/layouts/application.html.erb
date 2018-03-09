@@ -10,10 +10,8 @@
   </head>
 
   <body bgcolor=#E6E6FA>
-
     <% if logged_in? %>
       Welcome, <%= current_user.email %>!
-
       <form action="<%= session_url %>" method="post">
        <input type="hidden" name="_method" value="delete" />
        <input
@@ -21,7 +19,6 @@
           name="authenticity_token"
           value="<%= form_authenticity_token%>" />
        <input type="submit" value="Sign Out" />
-
     <% else %>
       <a href="<%= new_session_url %>">Sign In</a>
     <% end %>
